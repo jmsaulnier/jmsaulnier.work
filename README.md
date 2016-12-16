@@ -1,4 +1,4 @@
-# jmsaulnier.github.com
+# jmsaulnier.work
 
 > WIP \o/ 
 
