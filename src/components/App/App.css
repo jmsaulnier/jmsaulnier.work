@@ -1,0 +1,11 @@
+@import '../../../node_modules/normalize.css/normalize.css';
+@import '../../styles/helpers.css';
+
+html,
+body {
+  background-color: #000000;
+}
+
+.App {
+  color: #ffffff;
+}
