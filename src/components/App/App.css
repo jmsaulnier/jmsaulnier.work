@@ -1,5 +1,6 @@
 @import '../../../node_modules/normalize.css/normalize.css';
 @import '../../styles/helpers.css';
+@import '../../styles/fonts.css';
 
 html,
 body {
@@ -7,5 +8,12 @@ body {
 }
 
 .App {
-  color: #ffffff;
+  margin: 5vh 0 0 5vh;
+  letter-spacing: 0.5vh;
+  padding: 0;
+  line-height: 8vh;
+  color: #ffffe5;
+  font-family: 'Passion One', cursive;
+  font-size: 10vh;
+  text-transform: uppercase;
 }
