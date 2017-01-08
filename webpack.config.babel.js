@@ -6,7 +6,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
-
+const package = require('./package.json');
 
 const ENV = process.env.NODE_ENV || 'development';
 
@@ -83,6 +83,7 @@ module.exports = {
       template: 'index.template.ejs',
       inject: true,
 			googleAnalyticsID: ENV==='production' ? 'UA-89140731-1' : 'UA-XXXXXXXX-X',
+			version: package.version,
       minify: {
         removeComments: true,
         collapseWhitespace: true,

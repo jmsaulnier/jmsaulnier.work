@@ -68,6 +68,8 @@
           ||     ||`, "font-family:monospace")
       console.log('%c https://github.com/jmsaulnier/jmsaulnier.works ', 'background: #222; color: #ffffff; font-weight: bold');
 
+      window.__VERSION__ = '<%= htmlWebpackPlugin.options.version %>';
+
       //If serviceWorker supports, then register it.
 		  if ("serviceWorker" in navigator) {
 		    navigator.serviceWorker.register('./serviceWorker.js', { scope: "./" }) //setting scope of sw
