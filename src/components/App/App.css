@@ -11,9 +11,9 @@ body {
   margin: 5vh 0 0 5vh;
   letter-spacing: 0.5vh;
   padding: 0;
-  line-height: 8vh;
+  line-height: 10vh;
   color: #ffffe5;
-  font-family: 'Passion One', cursive;
-  font-size: 10vh;
+  font-family: 'Fredericka the Great', sans-serif;
+  font-size: 8vh;
   text-transform: uppercase;
 }
