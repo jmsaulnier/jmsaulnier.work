@@ -1,9 +1,12 @@
 import path from 'path';
+import fs from 'fs';
 import autoprefixer from 'autoprefixer';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
+
+
 
 const ENV = process.env.NODE_ENV || 'development';
 
@@ -75,10 +78,11 @@ module.exports = {
 			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
 		new HtmlWebpackPlugin({
+			hash: true,
       filename: 'index.html',
-      template: 'index.template.html',
+      template: 'index.template.ejs',
       inject: true,
-      ENV: JSON.stringify(ENV),
+			googleAnalyticsID: ENV==='production' ? 'UA-89140731-1' : 'UA-XXXXXXXX-X',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -140,10 +144,12 @@ module.exports = {
 		port: process.env.PORT || 8080,
 		host: 'localhost',
 		publicPath: '/',
-		contentBase: './src',
+		contentBase: ['./src', './static'],
 		historyApiFallback: true,
-		open: true,
-		https: true,
+		https: { 
+			key: fs.readFileSync('localhost.pem', 'utf8'), 
+			cert: fs.readFileSync('localhost.pem', 'utf8') 
+		},
 		proxy: {
 			// OPTIONAL: proxy configuration:
 			// '/optional-prefix/**': { // path pattern to rewrite

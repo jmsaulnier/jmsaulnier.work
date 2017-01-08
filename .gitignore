@@ -2,6 +2,7 @@
 .ebextensions
 .idea
 .vscode
+localhost.pem
 *-debug.log
 node_modules
 build
