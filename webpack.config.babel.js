@@ -4,9 +4,10 @@ import autoprefixer from 'autoprefixer';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
-const package = require('./package.json');
+const pkg = require('./package.json');
 
 const ENV = process.env.NODE_ENV || 'development';
 
@@ -83,7 +84,8 @@ module.exports = {
       template: 'index.template.ejs',
       inject: true,
 			googleAnalyticsID: ENV==='production' ? 'UA-89140731-1' : 'UA-XXXXXXXX-X',
-			version: package.version,
+			version: pkg.version,
+			defer: ['app', 'vendors'],
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -92,6 +94,9 @@ module.exports = {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
     }),
+		new ScriptExtHtmlWebpackPlugin({
+			defaultAttribute: 'async'
+		}),
 		new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function postcss() {
