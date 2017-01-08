@@ -71,3 +71,19 @@ self.addEventListener('fetch', function (event) {
     })
   );
 });
+
+self.addEventListener('beforeinstallprompt', function(event) {
+  // beforeinstallprompt Event fired
+
+  // event.userChoice will return a Promise. 
+  // For more details read: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+  event.userChoice.then(function(choiceResult) {
+
+    if(choiceResult.outcome == 'dismissed') {
+      console.log('%c User cancelled home screen install ', 'background: #e22a2a; color: #ffffff; font-weight: bold');
+    }
+    else {
+      console.log('%c User added to home screen ', 'background: #258a25; color: #ffffff; font-weight: bold');
+    }
+  });
+});
