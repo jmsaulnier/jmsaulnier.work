@@ -8,7 +8,7 @@ var filesToCache = [
 
 //Adding 'install' event listener
 self.addEventListener('install', function (event) {
-  console.log('Event: Install');
+  console.log('%c Event: Install', 'background: #258a25; color: #ffffff; font-weight: bold');
 
   event.waitUntil(
   	//Open the cache
@@ -17,7 +17,7 @@ self.addEventListener('install', function (event) {
   			//Adding the files to cache
   			return cache.addAll(filesToCache)
   				.then(function () {
-  					console.log("All files are cached.");
+             console.log('%c All files are cached. ', 'background: #258a25; color: #ffffff; font-weight: bold');
             return self.skipWaiting(); //To forces the waiting service worker to become the active service worker
   				})
   		})
@@ -29,7 +29,7 @@ self.addEventListener('install', function (event) {
 
 //Adding 'activate' event listener
 self.addEventListener('activate', function (event) {
-  console.log('Event: Activate');
+  console.log('%c Event: Activate ', 'background: #258a25; color: #ffffff; font-weight: bold');
 
   event.waitUntil( 
     caches.keys().then(function(cacheNames) {
