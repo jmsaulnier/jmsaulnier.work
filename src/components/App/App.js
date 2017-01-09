@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { Router } from 'preact-router';
+
+import HomeView from '../HomeView';
+import AboutView from '../AboutView';
 
 import styles from './App.css';
 
@@ -8,15 +12,12 @@ import styles from './App.css';
 export default class App extends Component {
   render () {
     return (
-      <p className={styles.App}>
-        Don't<br />
-        worry.<br />
-        Every<br />
-        thing is<br />
-        going<br />
-        to be<br /> 
-        amazing.
-      </p>
+      <div className={styles.App}>
+        <Router>
+					<HomeView path='/' />
+          <AboutView path='/about/' />
+				</Router>
+      </div>
     );
   }
 }
