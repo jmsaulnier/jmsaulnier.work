@@ -72,17 +72,6 @@
 
       window.__VERSION__ = '<%= htmlWebpackPlugin.options.version %>';
 
-      //If serviceWorker supports, then register it.
-		  if ("serviceWorker" in navigator) {
-		    navigator.serviceWorker.register('./serviceWorker.js', { scope: "./" }) //setting scope of sw
-		    .then(function (registration) {
-          console.log('%c Service worker is registered! ', 'background: #258a25; color: #ffffff; font-weight: bold');
-		    })
-		    .catch(function (error) {
-		      console.error('Service worker failed ', error);
-		    });
-		  }
-
     </script>
 
     <script>

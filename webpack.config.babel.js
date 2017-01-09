@@ -4,7 +4,7 @@ import autoprefixer from 'autoprefixer';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+import SWPrecache from 'sw-precache-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
 const pkg = require('./package.json');
@@ -74,10 +74,13 @@ module.exports = {
 	},
 
 	plugins: ([
+
 		new webpack.NoErrorsPlugin(),
+
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
+
 		new HtmlWebpackPlugin({
 			hash: true,
       filename: 'index.html',
@@ -85,7 +88,6 @@ module.exports = {
       inject: true,
 			googleAnalyticsID: ENV==='production' ? 'UA-89140731-1' : 'UA-XXXXXXXX-X',
 			version: pkg.version,
-			defer: ['app', 'vendors'],
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -94,9 +96,7 @@ module.exports = {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
     }),
-		new ScriptExtHtmlWebpackPlugin({
-			defaultAttribute: 'async'
-		}),
+
 		new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function postcss() {
@@ -111,7 +111,9 @@ module.exports = {
         },
       },
     }),
+
 	]).concat(ENV==='production' ? [
+
 		new webpack.optimize.CommonsChunkPlugin({
       names: ['vendors'],
     }),
@@ -132,16 +134,17 @@ module.exports = {
 
 		new CompressionPlugin(),
 
-    /**
-		
-		new OfflinePlugin({
-			relativePaths: false,
-			AppCache: false,
-			ServiceWorker: {
-				events: true
-			},
+    new SWPrecache({
+			cacheId: 'cache-v1',
+			filename: 'service-worker.js',
+			dontCacheBustUrlsMatching: /./,
+			navigateFallback: 'index.html',
+			staticFileGlobsIgnorePatterns: [/\.map$/]
 		})
-		*/
+	] : []).concat(ENV==='development' ? [
+
+		new webpack.HotModuleReplacementPlugin(),
+
 	] : []),
 
 	devtool: ENV==='production' ? 'source-map' : 'cheap-module-eval-source-map',
