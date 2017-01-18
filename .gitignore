@@ -2,6 +2,7 @@
 .ebextensions
 .idea
 .vscode
+__UI
 localhost.pem
 *-debug.log
 node_modules

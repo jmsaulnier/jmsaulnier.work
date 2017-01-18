@@ -17,7 +17,7 @@ module.exports = {
 
 	entry: {
     app: ['./src/index.js'],
-    vendors: ['preact', 'preact-compat', 'preact-redux', 'redux', 'preact-router'],
+    vendors: ['./src/polyfills.js', 'preact', 'preact-compat', 'preact-redux', 'redux', 'preact-router', 'preact-transition-group', 'gsap'],
   },
 
 	output: {
@@ -75,7 +75,7 @@ module.exports = {
 
 	plugins: ([
 
-		new webpack.NoErrorsPlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
 
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(ENV)
