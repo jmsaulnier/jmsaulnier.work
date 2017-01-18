@@ -1,3 +1,7 @@
 .HomeView {
+  position: absolute;
+}
 
+.HomeView h1 {
+  color: #ffffff;
 }

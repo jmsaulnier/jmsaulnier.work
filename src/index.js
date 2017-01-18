@@ -1,18 +1,21 @@
 import { render } from 'react-dom';
 import React from 'react';
 
+import domready from 'domready';
+
+import 'gsap';
+import 'gsap-then';
+
 let root;
 
-function init() {
-	let App = require('./components/App').default;
+domready(() => {
+  let App = require('./components/App').default;
 	root = render(<App/>, document.getElementById('root'), root);
-}
-
-init();
+});
 
 if (process.env.NODE_ENV === 'production') {
 	// cache all assets if browser supports serviceworker
-	//If serviceWorker supports, then register it.
+	// If serviceWorker supports, then register it.
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
     navigator.serviceWorker.register('./service-worker.js', { scope: "./" }) //setting scope of sw
     .then(function (registration) {
