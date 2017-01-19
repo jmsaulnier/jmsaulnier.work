@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
-    "gsap": "^1.19.0",
+    "gsap": "^1.19.1",
     "gsap-then": "^2.1.1",
     "normalize.css": "^5.0.0",
     "preact": "^7.1.0",

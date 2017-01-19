@@ -3,9 +3,6 @@ import React from 'react';
 
 import domready from 'domready';
 
-import 'gsap';
-import 'gsap-then';
-
 let root;
 
 domready(() => {

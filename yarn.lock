@@ -2003,9 +2003,9 @@ gsap-then@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/gsap-then/-/gsap-then-2.1.1.tgz#e034c735f8687c40772d0a520937ede69fcd62df"
 
-gsap@^1.19.0:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-1.19.0.tgz#f36b78c6b1a449028d89efbb4c161db29f5991dd"
+gsap@^1.19.1:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-1.19.1.tgz#480d320c662337c2663f836baf45e91ea024b553"
 
 handle-thing@^1.2.4:
   version "1.2.5"

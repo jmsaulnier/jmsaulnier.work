@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'preact-router';
 
+import * as animate from '../../utils/animate';
+
 import styles from './AboutView.css';
 
 /**
  * AboutView component
  */
 export default class AboutView extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {};
@@ -14,37 +17,64 @@ export default class AboutView extends Component {
     this.$title = null;
   }
   
+  /**
+   * componentWillAppear
+   * @param callback
+   */
   componentWillAppear(callback) {
     console.log('componentWillAppear::AboutView');
     this.animateIn(callback);
   }
 
+  /**
+   * componentWillEnter
+   * @param callback
+   */
   componentWillEnter(callback) {
     console.log('componentWillEnter::AboutView');
     this.animateIn(callback);
   }
 
+  /**
+   * componentWillLeave
+   * @param callback
+   */
   componentWillLeave(callback) {
     console.log('componentWillLeave::AboutView');
     this.animateOut(callback);
   }
 
+  /**
+   * animateIn
+   * @param callback
+   */
   animateIn(callback) {
-    TweenLite.set(this.$title, { opacity: 0 });
+    animate.set(this.$title, { opacity: 0 });
 
-    TweenLite.to(this.$title, 1, { opacity: 1 }).then(() => {
-      console.log('animateIn::AboutView - complete');
+    Promise.all([
+      animate.to(this.$title, 1, { opacity: 1 })
+    ]).then(() => {
+      console.log('animateIn::Aboutview - completed');
       callback();
-    })
+    });
   }
 
+  /**
+   * animateOut
+   * @param callback
+   */
   animateOut(callback) {
-    TweenLite.to(this.$title, 5, { opacity: 0 }).then(() => {
-      console.log('animateOut::AboutView - complete');
+    Promise.all([
+      animate.to(this.$title, 5, { opacity: 0 })
+    ]).then(() => {
+      console.log('animateOut::Aboutview - completed');
       callback();
-    })
+    });
   }
 
+  /**
+   * render
+   */
   render() {
     return (
       <div className={styles.AboutView}>
