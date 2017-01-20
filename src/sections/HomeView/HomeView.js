@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'preact-router';
 
-import * as animate from '../../utils/animate';
+import * as animate from 'src/core/animate';
 
 import styles from './HomeView.css';
 

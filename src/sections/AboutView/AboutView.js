@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'preact-router';
 
-import * as animate from '../../utils/animate';
+import * as animate from 'src/core/animate';
 
 import styles from './AboutView.css';
 
@@ -65,7 +65,7 @@ export default class AboutView extends Component {
    */
   animateOut(callback) {
     Promise.all([
-      animate.to(this.$title, 5, { opacity: 0 })
+      animate.to(this.$title, 2, { opacity: 0 })
     ]).then(() => {
       console.log('animateOut::Aboutview - completed');
       callback();

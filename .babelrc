@@ -6,7 +6,8 @@
       "root": ["."],
       "alias": {
         "react": "preact-compat",
-        "react-dom": "preact-compat"
+        "react-dom": "preact-compat",
+        "src": "./src"
       }
     }],
     ["transform-react-jsx"]
