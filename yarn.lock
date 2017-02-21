@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@jam3/gsap-promise@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@jam3/gsap-promise/-/gsap-promise-3.0.3.tgz#20fb20eceebe6f6bd0949ff247875c928a29bafc"
+  dependencies:
+    gsap "1.19.1"
+    object-assign "^4.1.1"
+
 abbrev@1:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"
@@ -1999,11 +2006,7 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
-gsap-then@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/gsap-then/-/gsap-then-2.1.1.tgz#e034c735f8687c40772d0a520937ede69fcd62df"
-
-gsap@^1.19.1:
+gsap@1.19.1, gsap@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/gsap/-/gsap-1.19.1.tgz#480d320c662337c2663f836baf45e91ea024b553"
 
@@ -2875,9 +2878,9 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@^4.0.1, object-assign@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
+object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
 object.omit@^2.0.0:
   version "2.0.1"

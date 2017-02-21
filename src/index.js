@@ -6,6 +6,8 @@ import createStore from './store/configure';
 
 import domready from 'domready';
 
+import 'gsap';
+
 let root;
 
 domready(() => {
