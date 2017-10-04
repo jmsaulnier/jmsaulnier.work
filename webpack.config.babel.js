@@ -17,7 +17,7 @@ module.exports = {
 
 	entry: {
     app: ['./src/index.js'],
-    vendors: ['./src/polyfills.js', 'preact', 'preact-compat', 'preact-redux', 'redux', 'preact-router', 'preact-transition-group', 'gsap'],
+    vendors: ['./src/polyfills.js', 'preact', 'preact-compat'],
   },
 
 	output: {
@@ -38,8 +38,8 @@ module.exports = {
             path.resolve('node_modules/preact-compat/src'),
         ],
       },
-			{ 
-				test: /\.css$/, 
+			{
+				test: /\.css$/,
 				loader: ENV==='production' ? ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: 'css-loader?modules&importLoaders=1&localIdentName=[local]_[hash:base64:3]&minimize!postcss-loader',
@@ -47,7 +47,7 @@ module.exports = {
           'style-loader',
           'css-loader?modules&localIdentName=[local]_[hash:base64:3]',
           'postcss-loader',
-        ] 
+        ]
 			},
 			{
 				test: /\.json$/,
@@ -69,7 +69,10 @@ module.exports = {
 				query: {
           name: '[name].[ext]?[hash:4]',
         },
-			}
+			},
+			// GLSL
+      { test: /\.(glsl|frag|vert)$/, loader: 'raw-loader' },
+      { test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader' }
 		]
 	},
 
@@ -155,9 +158,9 @@ module.exports = {
 		publicPath: '/',
 		contentBase: ['./src', './static'],
 		historyApiFallback: true,
-		https: { 
-			key: fs.readFileSync('localhost.pem', 'utf8'), 
-			cert: fs.readFileSync('localhost.pem', 'utf8') 
+		https: {
+			key: fs.readFileSync('localhost.pem', 'utf8'),
+			cert: fs.readFileSync('localhost.pem', 'utf8')
 		},
 		proxy: {
 			// OPTIONAL: proxy configuration:

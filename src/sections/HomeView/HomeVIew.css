@@ -1,7 +1,32 @@
 .HomeView {
-  position: absolute;
+	margin-bottom: 8rem;
+	width: 66.66667%;
+	margin-top: 16.66667%;
+	margin-left: 16.66667%;
+	color: #fff;
+}
+
+.HomeView a {
+	color: #DAB45B;
+	text-decoration: none;
 }
 
 .HomeView h1 {
   color: #ffffff;
+}
+
+.HomeView .references {
+	margin: 0;
+	padding: 0;
+}
+
+.HomeView .social a,
+.HomeView .social a:visited {
+	text-decoration: none;
+}
+
+
+.HomeView .social .bullet {
+	display: inline-block;
+	margin: 0.7em;
 }

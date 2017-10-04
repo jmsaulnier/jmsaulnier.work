@@ -1,0 +1,24 @@
+.Reference {
+	list-style: none;
+	margin-bottom: 2em;
+}
+
+.Reference h5 {
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+}
+
+.Reference h6 {
+	padding: 0;
+	margin: 0;
+}
+
+
+.Reference .tags {
+}
+
+.Reference .tag {
+	margin-right: 0.2em;
+	background: #333;
+}

@@ -1,18 +1,13 @@
 import { render } from 'react-dom';
 import React from 'react';
-import { Provider } from 'preact-redux';
-
-import createStore from './store/configure';
 
 import domready from 'domready';
-
-import 'gsap';
 
 let root;
 
 domready(() => {
   let App = require('./sections/App').default;
-	root = render(<Provider store={createStore()}><App/></Provider>, document.getElementById('root'), root);
+	root = render(<App/>, document.getElementById('root'), root);
 });
 
 if (process.env.NODE_ENV === 'production') {

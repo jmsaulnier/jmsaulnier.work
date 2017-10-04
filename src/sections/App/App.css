@@ -1,25 +1,12 @@
 @import '../../../node_modules/normalize.css/normalize.css';
 @import '../../styles/helpers.css';
-@import '../../styles/fonts.css';
 
 html,
 body {
-  background-color: #000000;
+	-webkit-font-smoothing: antialiased;
 }
 
 .App {
-  
+	font-family: 'Inconsolata', monospace;
+	/**background-color: #39ABB2;**/
 }
-
-/**
-.App {
-  margin: 5vh 0 0 5vh;
-  letter-spacing: 0.5vh;
-  padding: 0;
-  line-height: 10vh;
-  color: #ffffe5;
-  font-family: 'Fredericka the Great', sans-serif;
-  font-size: 8vh;
-  text-transform: uppercase;
-}
-**/
