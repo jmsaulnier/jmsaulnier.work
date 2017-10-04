@@ -1,0 +1,10 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  <name> Jean-Michel Saulnier <role> Creative developer <twitter> @jmsaulnier
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3
