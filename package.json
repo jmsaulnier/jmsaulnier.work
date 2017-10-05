@@ -11,7 +11,9 @@
     "start": "http-server ./build --gzip --cors -c-1 --ssl --cert localhost.pem --key localhost.pem",
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack --progress",
-    "prebuild": "del build && mkdirp build && ncp static build"
+    "prebuild": "del build && mkdirp build && ncp static build",
+    "cname": "[[ -e CNAME ]] && cp CNAME build/CNAME || echo 'no CNAME found'",
+    "deploy": "npm run build && npm run cname && gh-pages -d build"
   },
   "dependencies": {
     "domready": "^1.0.8",
@@ -40,6 +42,7 @@
     "css-loader": "^0.27.3",
     "del-cli": "^0.2.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "gh-pages": "^1.0.0",
     "glslify": "^6.1.0",
     "glslify-loader": "^1.0.2",
     "html-webpack-plugin": "^2.28.0",
