@@ -1,0 +1,11 @@
+@import '../../../node_modules/normalize.css/normalize.css';
+@import '../../styles/helpers.css';
+
+html,
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+.App {
+	font-family: 'Inconsolata', monospace;
+}

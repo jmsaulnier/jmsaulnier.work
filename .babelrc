@@ -6,7 +6,9 @@
       "root": ["."],
       "alias": {
         "react": "preact-compat",
-        "react-dom": "preact-compat"
+        "react-dom": "preact-compat",
+        "gsap-promise": "@jam3/gsap-promise",
+        "src": "./src"
       }
     }],
     ["transform-react-jsx"]

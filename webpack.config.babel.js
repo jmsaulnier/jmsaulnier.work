@@ -4,9 +4,10 @@ import autoprefixer from 'autoprefixer';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import SWPrecache from 'sw-precache-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
-const package = require('./package.json');
+const pkg = require('./package.json');
 
 const ENV = process.env.NODE_ENV || 'development';
 
@@ -16,7 +17,7 @@ module.exports = {
 
 	entry: {
     app: ['./src/index.js'],
-    vendors: ['preact', 'preact-compat', 'preact-redux', 'redux', 'preact-router'],
+    vendors: ['./src/polyfills.js', 'preact', 'preact-compat'],
   },
 
 	output: {
@@ -37,8 +38,8 @@ module.exports = {
             path.resolve('node_modules/preact-compat/src'),
         ],
       },
-			{ 
-				test: /\.css$/, 
+			{
+				test: /\.css$/,
 				loader: ENV==='production' ? ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: 'css-loader?modules&importLoaders=1&localIdentName=[local]_[hash:base64:3]&minimize!postcss-loader',
@@ -46,7 +47,7 @@ module.exports = {
           'style-loader',
           'css-loader?modules&localIdentName=[local]_[hash:base64:3]',
           'postcss-loader',
-        ] 
+        ]
 			},
 			{
 				test: /\.json$/,
@@ -68,22 +69,28 @@ module.exports = {
 				query: {
           name: '[name].[ext]?[hash:4]',
         },
-			}
+			},
+			// GLSL
+      { test: /\.(glsl|frag|vert)$/, loader: 'raw-loader' },
+      { test: /\.(glsl|frag|vert)$/, loader: 'glslify-loader' }
 		]
 	},
 
 	plugins: ([
-		new webpack.NoErrorsPlugin(),
+
+		new webpack.NoEmitOnErrorsPlugin(),
+
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
+
 		new HtmlWebpackPlugin({
 			hash: true,
       filename: 'index.html',
       template: 'index.template.ejs',
       inject: true,
 			googleAnalyticsID: ENV==='production' ? 'UA-89140731-1' : 'UA-XXXXXXXX-X',
-			version: package.version,
+			version: pkg.version,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -92,6 +99,7 @@ module.exports = {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
     }),
+
 		new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function postcss() {
@@ -106,7 +114,9 @@ module.exports = {
         },
       },
     }),
+
 	]).concat(ENV==='production' ? [
+
 		new webpack.optimize.CommonsChunkPlugin({
       names: ['vendors'],
     }),
@@ -127,16 +137,17 @@ module.exports = {
 
 		new CompressionPlugin(),
 
-    /**
-		
-		new OfflinePlugin({
-			relativePaths: false,
-			AppCache: false,
-			ServiceWorker: {
-				events: true
-			},
+    new SWPrecache({
+			cacheId: 'cache-v1',
+			filename: 'service-worker.js',
+			dontCacheBustUrlsMatching: /./,
+			navigateFallback: 'index.html',
+			staticFileGlobsIgnorePatterns: [/\.map$/]
 		})
-		*/
+	] : []).concat(ENV==='development' ? [
+
+		new webpack.HotModuleReplacementPlugin(),
+
 	] : []),
 
 	devtool: ENV==='production' ? 'source-map' : 'cheap-module-eval-source-map',
@@ -147,9 +158,9 @@ module.exports = {
 		publicPath: '/',
 		contentBase: ['./src', './static'],
 		historyApiFallback: true,
-		https: { 
-			key: fs.readFileSync('localhost.pem', 'utf8'), 
-			cert: fs.readFileSync('localhost.pem', 'utf8') 
+		https: {
+			key: fs.readFileSync('localhost.pem', 'utf8'),
+			cert: fs.readFileSync('localhost.pem', 'utf8')
 		},
 		proxy: {
 			// OPTIONAL: proxy configuration:

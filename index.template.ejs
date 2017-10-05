@@ -6,6 +6,11 @@
     <meta name="description" content="Jean-Michel Saulnier - Creative developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
+    <meta name="keywords" content="Portfolio, Gobelins, front-end developer, creative developer">
+    <meta name="author" content="Jean-Michel Saulnier">
+    <meta name="copyright" content="© Copyright 2017 - Jean-Michel Saulnier" />
+
     <!-- facebook  -->
     <meta property="og:image" content=""/>
     <meta property="og:title" content=""/>
@@ -14,10 +19,10 @@
 
     <!-- twitter  -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:creator" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="@jmsaulnier">
+    <meta name="twitter:creator" content="@jmsaulnier">
+    <meta name="twitter:title" content="Jean-Michel Saulnier - Creative developer">
+    <meta name="twitter:description" content="Jean-Michel Saulnier - Creative developer">
     <meta name="twitter:image:src" content="">
 
     <title>Jean-Michel Saulnier - Creative developer</title>
@@ -41,19 +46,21 @@
     <meta name="msapplication-TileColor" content="#3372DF">
 
     <meta name="theme-color" content="#3372DF">
-    
-  </head>  
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+  </head>
   <body>
 
     <section id="root">
       <noscript>
-        <p>
+        <p class="noscript">
           Don't<br />
           worry.<br />
           Every<br />
           thing is<br />
           going<br />
-          to be<br /> 
+          to be<br />
           amazing.
         </p>
       </noscript>
@@ -69,17 +76,6 @@
       console.log('%c https://github.com/jmsaulnier/jmsaulnier.works ', 'background: #222; color: #ffffff; font-weight: bold');
 
       window.__VERSION__ = '<%= htmlWebpackPlugin.options.version %>';
-
-      //If serviceWorker supports, then register it.
-		  if ("serviceWorker" in navigator) {
-		    navigator.serviceWorker.register('./serviceWorker.js', { scope: "./" }) //setting scope of sw
-		    .then(function (registration) {
-          console.log('%c Service worker is registered! ', 'background: #258a25; color: #ffffff; font-weight: bold');
-		    })
-		    .catch(function (error) {
-		      console.error('Service worker failed ', error);
-		    });
-		  }
 
     </script>
 
