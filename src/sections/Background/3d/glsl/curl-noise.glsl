@@ -100,7 +100,7 @@ vec3 curlNoise( vec3 p ){
 	float y = p_z1.x - p_z0.x - p_x1.z + p_x0.z;
 	float z = p_x1.y - p_x0.y - p_y1.x + p_y0.x;
 	const float divisor = 1.0 / ( 2.0 * e );
-	return normalize( vec3( x , y , z ) * divisor );
+	return normalize( vec3( x - 0.2, y - 0.1 , z - 1.0 ) * divisor );
 }
 
 
