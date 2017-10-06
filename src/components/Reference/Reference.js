@@ -20,7 +20,8 @@ class Reference extends Component {
   render(props) {
     return (
 			<li className={styles.Reference}>
-				<h5><a href={this.props.href} target="_blank">{this.props.name}</a> | {this.props.client}</h5>
+				<div className={styles.sep} />
+				<h5><a href={this.props.href} target="_blank"><b>{this.props.name}</b></a> © <span>{this.props.client}</span></h5>
 				<h6>
 					<span className={styles.tags}>
 						{this.props.tags.map((tag) =>
@@ -28,7 +29,7 @@ class Reference extends Component {
 						)}
 					</span>
 					<br />
-					― {this.props.awards}
+					♡ {this.props.awards}
 				</h6>
 			</li>
     );

@@ -34,7 +34,7 @@ export default class App {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         datatexture: {type: 't', value: null},
-        pointSize: {type: 'f', value: 1.4}
+        pointSize: {type: 'f', value: 1.0}
       },
       transparent: true,
       // blending: THREE.AdditiveBlending,
@@ -71,10 +71,7 @@ export default class App {
     this.positionFBO.update(now, delta)
 
     // Send FBO texture to shaders
-    this.material.uniforms.datatexture.value = this.positionFBO.texture
-
-    this.particles.rotation.x += Math.PI / 180 * .1
-    this.particles.rotation.y -= Math.PI / 180 * .1
+    this.material.uniforms.datatexture.value = this.positionFBO.texture;
 
     // Render the scene on the screen
     this.renderer.render(this.scene, this.camera)

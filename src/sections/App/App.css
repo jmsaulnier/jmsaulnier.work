@@ -7,5 +7,15 @@ body {
 }
 
 .App {
-	font-family: 'Inconsolata', monospace;
+	font-family: 'Cormorant Garamond', serif;
+}
+
+.App a,
+.App:visited {
+	color: #d0caab;
+	text-decoration: none;
+}
+
+.App a:hover {
+	border-bottom: 1px solid #d0caab;
 }
