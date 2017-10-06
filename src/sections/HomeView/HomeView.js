@@ -25,7 +25,7 @@ export default class HomeView extends Component {
     return (
       <div className={styles.HomeView}>
         <h1><b>Jean-Michel Saulnier</b></h1>
-				<h2>Freelance creative developer</h2>
+				<h2>Freelance Creative Developer</h2>
 				<h3>
 					For any project inquiry, feel free<br />
 					to say hello at <a href="mailto:hi@jmsaulnier.works">hi@jmsaulnier.works</a>

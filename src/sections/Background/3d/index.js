@@ -34,7 +34,7 @@ export default class App {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         datatexture: {type: 't', value: null},
-        pointSize: {type: 'f', value: 1.4}
+        pointSize: {type: 'f', value: 1.0}
       },
       transparent: true,
       // blending: THREE.AdditiveBlending,

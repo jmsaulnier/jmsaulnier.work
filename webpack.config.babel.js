@@ -154,14 +154,10 @@ module.exports = {
 
 	devServer: {
 		port: process.env.PORT || 8080,
-		host: 'localhost',
+		host: '0.0.0.0',
 		publicPath: '/',
 		contentBase: ['./src', './static'],
 		historyApiFallback: true,
-		https: {
-			key: fs.readFileSync('localhost.pem', 'utf8'),
-			cert: fs.readFileSync('localhost.pem', 'utf8')
-		},
 		proxy: {
 			// OPTIONAL: proxy configuration:
 			// '/optional-prefix/**': { // path pattern to rewrite
