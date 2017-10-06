@@ -19,7 +19,7 @@ export function createBackground (opt) {
       aspect: {type: 'f', value: 1},
       grainScale: {type: 'f', value: 0.001},
       grainTime: {type: 'f', value: 0},
-      noiseAlpha: {type: 'f', value: 0.5},
+      noiseAlpha: {type: 'f', value: 0.0},
       offset: {type: 'v2', value: new THREE.Vector2(0, 0)},
       scale: {type: 'v2', value: new THREE.Vector2(1, 1)},
       smoother: {type: 'v2', value: new THREE.Vector2(0.0, orientation === 'landscape' ? 0.5 : 0.9)},
