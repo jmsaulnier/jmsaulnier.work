@@ -1,24 +1,23 @@
 .HomeView {
 	margin-bottom: 8rem;
 	width: auto;
-	margin-top: 16.66667%;
+	margin-top: 12%;
 	margin-left: 12%;
 	color: #33cce8;
 }
 
 .HomeView h1 {
-	font-size: 2em;
+	font-size: calc(1vw + 2.6vh + 2vmin);
 	margin-bottom: 0.1em;
 	padding: 0;
 }
 
 .HomeView h2 {
-	font-size: 0.9em;
-	color: rgba(255, 255, 255, 0.5);
-	font-family: 'Quicksand', sans-serif;
+	font-size: calc(0.5vw + 1.3vh + 1vmin);
+	color: rgba(255, 255, 255, 0.8);
 	margin: 0;
 	padding: 0;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.05em;
 }
 
 .HomeView h2 span {
@@ -26,24 +25,26 @@
 }
 
 .HomeView h3 {
-	margin: 3em 0;
+	margin: 2em 0;
+	font-size: calc(0.5vw + 1.3vh + 2vmin);
 }
 
 .HomeView h4 {
-	font-size: 2em;
+	font-size: calc(1vw + 1vh + 2vmin);
 	margin: 1.6em 0 1.2em 0;
 	letter-spacing: 0.05em;
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .HomeView .references {
-	margin: 0;
+	margin: calc(5vh + 5vw) 0 0 0;
 	padding: 0;
 }
 
 .HomeView .social a,
 .HomeView .social a:visited {
 	text-decoration: none;
-	font-size: 1em;
+	font-size: calc(0.3vw + 1.7vh + 1vmin);
 	font-weight: 700;
 }
 

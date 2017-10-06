@@ -20,8 +20,7 @@ class Reference extends Component {
   render(props) {
     return (
 			<li className={styles.Reference}>
-				<div className={styles.sep} />
-				<h5><a href={this.props.href} target="_blank"><b>{this.props.name}</b></a> © <span>{this.props.client}</span></h5>
+				<h5><a href={this.props.href} target="_blank"><b>— {this.props.name}</b></a> © <span>{this.props.client}</span></h5>
 				<h6>
 					<span className={styles.tags}>
 						{this.props.tags.map((tag) =>

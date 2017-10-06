@@ -37,7 +37,6 @@ export default class HomeView extends Component {
 					<span className={styles.bullet}>•</span>
 					<span><a href="https://github.com/jmsaulnier" target="_blank">Github</a></span>
 				</div>
-				<h4>References</h4>
 				<ul className={styles.references}>
 					<Reference
 						name="Transformers"
