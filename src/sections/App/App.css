@@ -11,11 +11,11 @@ body {
 }
 
 .App a,
-.App:visited {
-	color: #d0caab;
+.App a:visited {
+	color: #e4d97d;
 	text-decoration: none;
 }
 
 .App a:hover {
-	border-bottom: 1px solid #d0caab;
+	border-bottom: 1px solid #e4d97d;
 }

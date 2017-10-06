@@ -1,13 +1,13 @@
 .HomeView {
 	margin-bottom: 8rem;
-	width: 66.66667%;
+	width: auto;
 	margin-top: 16.66667%;
-	margin-left: 16.66667%;
-	color: #fff;
+	margin-left: 12%;
+	color: #33cce8;
 }
 
 .HomeView h1 {
-	font-size: 2.2em;
+	font-size: 2em;
 	margin-bottom: 0.1em;
 	padding: 0;
 }
