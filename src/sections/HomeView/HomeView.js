@@ -27,9 +27,14 @@ export default class HomeView extends Component {
         <h1><b>Jean-Michel Saulnier</b></h1>
 				<h2>Freelance Creative Developer</h2>
 				<h3>
+					Focused on innovation: in terms of usage, methods, interfaces and technologies.
+					<br />
+					I love programming and the challenges of implementing rich user interfaces.
+				</h3>
+				<h4>
 					For any project inquiry, feel free<br />
 					to say hello at <a href="mailto:hi@jmsaulnier.works">hi@jmsaulnier.works</a>
-				</h3>
+				</h4>
 				<div className={styles.social}>
 					<span><a href="https://twitter.com/jmsaulnier" target="_blank">Twitter</a></span>
 					<span className={styles.bullet}>•</span>
@@ -37,7 +42,6 @@ export default class HomeView extends Component {
 					<span className={styles.bullet}>•</span>
 					<span><a href="https://github.com/jmsaulnier" target="_blank">Github</a></span>
 				</div>
-				<h4>References</h4>
 				<ul className={styles.references}>
 					<Reference
 						name="Transformers"
