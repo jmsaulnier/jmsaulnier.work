@@ -18,17 +18,19 @@ class Reference extends Component {
 	}
 
   render(props) {
+		const { href, client, awards, name, tags, description } = this.props;
+
     return (
 			<li className={styles.Reference}>
-				<h5><a href={this.props.href} target="_blank"><b>— {this.props.name}</b></a> © <span>{this.props.client}</span></h5>
+				<h5><a href={href} target="_blank"><b>— {name}</b></a> © <span>{client}</span></h5>
 				<h6>
 					<span className={styles.tags}>
-						{this.props.tags.map((tag) =>
+						{tags.map((tag) =>
 							<span className={styles.tag}>{tag}</span>
 						)}
 					</span>
 					<br />
-					♡ {this.props.awards}
+					♡ {awards}
 				</h6>
 			</li>
     );
@@ -39,6 +41,7 @@ Reference.propTypes = {
 	name: PropTypes.string,
 	client: PropTypes.string,
 	tags: PropTypes.array,
+	description: PropTypes.string,
 	awards: PropTypes.string,
 	href: PropTypes.string,
 };
