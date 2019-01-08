@@ -33,7 +33,7 @@ export default class HomeView extends Component {
 				</h3>
 				<h4>
 					For any project inquiry, feel free<br />
-					to say hello at <a href="mailto:hi@jmsaulnier.works">hi@jmsaulnier.works</a>
+					to say hello at <a href="mailto:jmsaulnier.dev@gmail.com">jmsaulnier.dev@gmail.com</a>
 				</h4>
 				<div className={styles.social}>
 					<span><a href="https://twitter.com/jmsaulnier" target="_blank">Twitter</a></span>
