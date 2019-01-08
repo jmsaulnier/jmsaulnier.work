@@ -48,63 +48,63 @@ export default class HomeView extends Component {
 						client="Paramount"
 						tags={['Playcanvas', 'React', 'Bodymovin']}
 						awards="CSS Design Awards (WOTD)"
-						href="http://thinkingbox.com/bumblebee"
+						href="https://thinkingbox.com/projects/calling-all-autobots"
 					/>
 					<Reference
 						name="Riverdale Comic book creator"
 						client="CW TV"
 						tags={['React', 'Facebook SDK']}
 						awards="Awwwards (SOTD), CSS Design Awards (WOTD)"
-						href="http://thinkingbox.com/riverdale"
+						href="https://thinkingbox.com/projects/riverdale"
 					/>
 					<Reference
 						name="Sneaky Pete"
 						client="Amazon Studios"
 						tags={['Unity', 'Arduino', 'Watson API', 'React']}
 						awards="FWA (SOTD), CSS Design Awards (WOTD)"
-						href="http://thinkingbox.com/sneakpete"
+						href="https://thinkingbox.com/projects/sneakypete"
 					/>
 					<Reference
 						name="Snowden"
 						client="Open Road"
 						tags={['React', 'Facebook SDK']}
 						awards="FWA (SOTD), CSS Design Awards (WOTD)"
-						href="http://thinkingbox.com/snowden"
+						href="https://thefwa.com/article/insights-snowden-are-you-being-watched"
 					/>
 					<Reference
 						name="The Hunger Games"
 						client="Lionsgate"
 						tags={['Kinect', 'Adobe AIR', 'React', 'Node.js']}
 						awards="FWA (SOTD)"
-						href="http://thinkingbox.com/mockingjay"
+						href="https://thinkingbox.com/projects/mockingjay"
 					/>
 					<Reference
 						name="Mission Impossible"
 						client="Paramount"
 						tags={['React']}
 						awards="IAC Award (Best Movie Website), CSS Design Awards (WOTD)"
-						href="http://thinkingbox.com/MI5"
+						href="https://www.cssdesignawards.com/sites/mission-impossible-rogue-nation/27023/"
 					/>
 					<Reference
 						name=" Into The Storm"
 						client="Warner Bros."
 						tags={['Unity', 'Arduino', 'Oculus Rift', 'Node.js']}
 						awards="ATOMIC Award winner (Best Tech breakthrough)"
-						href="http://thinkingbox.com/into-the-storm"
+						href="https://thinkingbox.com/projects/into-the-storm"
 					/>
 					<Reference
 						name="Magic Mirror"
 						client="Porsche"
 						tags={['OpenCV', 'Adobe AIR']}
 						awards="Cream: Inspiring Innovation"
-						href="http://thinkingbox.com/porsche"
+						href="https://thinkingbox.com/projects/porsche-magic-mirror"
 					/>
 					<Reference
 						name="Jupiter Ascending"
 						client="Warner Bros."
 						tags={['Three.js', 'Socket.IO', 'Node.js']}
 						awards="FWA (SOTD), IAC Award (Best Movie Interactive Application)"
-						href="http://thinkingbox.com/caines-quest"
+						href="https://thinkingbox.com/projects/jupiter-ascending"
 					/>
 				</ul>
       </div>
