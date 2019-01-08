@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/app.65c1a0272202b641357a.js","78d43aa83f1f2ebb0a25cf9bfcc6f85a"],["/app.65c1a0272202b641357a.js.gz","a1b6aa05f9c1510f9cc440035feb2984"],["/app.66d79f3fa356edc9298928d9e7db39ce.css","5a0be7a91f78cbead2f90ec8e5793966"],["/app.66d79f3fa356edc9298928d9e7db39ce.css.gz","7dd0c2fe0f9e52b812718f29fa9b83a1"],["/index.html","e99dece061456c1302463419d0b91de0"],["/vendors.7550d0f0cfc59facc15d.js","fc709ebe06f3f6415b2fb6071188463a"],["/vendors.7550d0f0cfc59facc15d.js.gz","38542eed753a26cfa310e33ba96c30bb"]];
+var precacheConfig = [["/app.65b7ae8b149f011a786b.js","38913558c5184d931ebcdf1059c56528"],["/app.65b7ae8b149f011a786b.js.gz","0c2abe4b91d88f76c002fd75c7f2b23b"],["/app.66d79f3fa356edc9298928d9e7db39ce.css","5a0be7a91f78cbead2f90ec8e5793966"],["/app.66d79f3fa356edc9298928d9e7db39ce.css.gz","5233aeade9ce34f1dba0b2a51a2995a8"],["/index.html","1ec5c966deee5d96aacc88fbcca4a682"],["/vendors.4ae4950f30be497a1bb2.js","e20a64686b49a02875323553475aa2ae"],["/vendors.4ae4950f30be497a1bb2.js.gz","b423b997e9c4a168173b51600d44b52d"]];
 var cacheName = 'sw-precache-v3-cache-v1-' + (self.registration ? self.registration.scope : '');
 
 
@@ -45,7 +45,7 @@ var ignoreUrlParametersMatching = [/^utm_/];
 
 
 
-var addDirectoryIndex = function (originalUrl, index) {
+var addDirectoryIndex = function(originalUrl, index) {
     var url = new URL(originalUrl);
     if (url.pathname.slice(-1) === '/') {
       url.pathname += index;
@@ -53,7 +53,7 @@ var addDirectoryIndex = function (originalUrl, index) {
     return url.toString();
   };
 
-var cleanResponse = function (originalResponse) {
+var cleanResponse = function(originalResponse) {
     // If this is not a redirected response, then we don't have to do anything.
     if (!originalResponse.redirected) {
       return Promise.resolve(originalResponse);
@@ -75,7 +75,7 @@ var cleanResponse = function (originalResponse) {
     });
   };
 
-var createCacheKey = function (originalUrl, paramName, paramValue,
+var createCacheKey = function(originalUrl, paramName, paramValue,
                            dontCacheBustUrlsMatching) {
     // Create a new URL object to avoid modifying originalUrl.
     var url = new URL(originalUrl);
@@ -91,7 +91,7 @@ var createCacheKey = function (originalUrl, paramName, paramValue,
     return url.toString();
   };
 
-var isPathWhitelisted = function (whitelist, absoluteUrlString) {
+var isPathWhitelisted = function(whitelist, absoluteUrlString) {
     // If the whitelist is empty, then consider all URLs to be whitelisted.
     if (whitelist.length === 0) {
       return true;
@@ -104,7 +104,7 @@ var isPathWhitelisted = function (whitelist, absoluteUrlString) {
     });
   };
 
-var stripIgnoredUrlParameters = function (originalUrl,
+var stripIgnoredUrlParameters = function(originalUrl,
     ignoreUrlParametersMatching) {
     var url = new URL(originalUrl);
 
