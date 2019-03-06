@@ -27,7 +27,9 @@
 .HomeView h3 {
 	display: inline-block;
 	margin: 3em 0 2em 0;
-	font-size: calc(0.2vw + 2.3vh + 1vmin)
+	font-size: calc(0.2vw + 2.3vh + 1vmin);
+	max-width: 960px;
+	padding-right: 30px;
 }
 
 .HomeView h4 {
