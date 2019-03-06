@@ -29,7 +29,7 @@ export default class HomeView extends Component {
 				<h3>
 					Focused on innovation: in terms of usage, methods, interfaces and technologies.
 					<br />
-					I love programming and the challenges of implementing rich user interfaces.
+					I am passionate about programming and the challenges of implementing rich user interfaces and solid interaction models.
 				</h3>
 				<h4>
 					For any project inquiry, feel free<br />
